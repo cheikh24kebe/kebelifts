@@ -287,24 +287,6 @@
       .premium-feats li:first-child::before { top: 10px; }
       .premium-cta { margin-top: 22px; }
 
-      /* ---------- TÉMOIGNAGES ---------- */
-      .testi-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 22px; align-items: start; }
-      .testi-grid > * { min-width: 0; }
-      .testi-intro h2 { font-size: clamp(34px, 5vw, 50px); margin: 0 0 14px; }
-      .testi-intro h2 em { font-style: normal; color: var(--signal); }
-      .testi-intro p { color: var(--bone-dim); margin: 0 0 14px; font-size: 16.5px; }
-      .testi-intro p strong { color: var(--bone); }
-      .testi-preview {
-        display: none; margin-top: 22px; border: 1px solid var(--line); border-left: 4px solid var(--signal);
-        background: var(--ink-2); border-radius: 10px; padding: 20px 22px;
-      }
-      .testi-preview.show { display: block; }
-      .testi-preview .tp-label { font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--signal); margin-bottom: 10px; }
-      .testi-preview blockquote { margin: 0 0 12px; font-size: 17px; line-height: 1.55; color: var(--bone); }
-      .testi-preview .tp-meta { font-size: 13.5px; color: var(--mute); font-weight: 600; }
-      .testi-preview .tp-meta b { color: var(--bone-dim); }
-      .testi-stars { color: var(--signal); letter-spacing: 3px; font-size: 15px; margin-bottom: 8px; }
-
       /* ---------- FAQ ---------- */
       .faq { max-width: 780px; }
       details { border-top: 1px solid var(--line); }
@@ -333,7 +315,6 @@
         .steps { grid-template-columns: minmax(0, 1fr); }
         .checkout-grid { grid-template-columns: minmax(0, 1fr); }
         .premium-card { grid-template-columns: minmax(0, 1fr); gap: 26px; padding: 28px 22px; }
-        .testi-grid { grid-template-columns: minmax(0, 1fr); }
         .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .stat:nth-child(3) { border-left: none; }
         .stat { border-top: 1px solid var(--line); }
@@ -378,11 +359,10 @@
           <nav class="hero-nav">
             <a href="#programs">Programmes</a>
             <a class="hl" href="#premium">Coaching Premium</a>
-            <a href="#temoignages">Témoignages</a>
           </nav>
         </div>
         <h1 class="hero-title display">Persévère<br /><span class="thin">dans l'effort.</span></h1>
-        <p class="hero-sub">Des programmes d'entraînement complets créés par le Coach Kebe, <strong>12 ans</strong> d'expérience, une communauté de <strong>plus de 700 000</strong> personnes, zéro improvisation.</p>
+        <p class="hero-sub">Des programmes d'entraînement complets créés par le Coach Kebe, <strong>12+ ans</strong> d'expérience, une communauté de <strong>plus de 700 000</strong> personnes, zéro improvisation.</p>
         <p class="hero-note">Choisis ton niveau, paie une seule fois, et reçois le programme complet en PDF : chaque exercice, chaque série, en français &amp; anglais.</p>
         <div class="hero-ctas">
           <a class="btn btn-signal" href="#programs">Choisis ton niveau</a>
@@ -390,7 +370,7 @@
           <a class="btn btn-ghost" href="#how">Comment ça marche</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><b>12</b><span>Ans d'expérience</span></div>
+          <div class="stat"><b>12+</b><span>Ans d'expérience</span></div>
           <div class="stat"><b>700K<i>+</i></b><span>Abonnés dans le monde</span></div>
           <div class="stat"><b>3</b><span>Niveaux, un seul prix</span></div>
           <div class="stat"><b>FR <i>·</i> EN</b><span>Guides PDF bilingues</span></div>
@@ -475,25 +455,21 @@
       <div class="wrap">
         <div class="premium-card">
           <div>
-            <span class="premium-badge">Suivi personnalisé 1 contre 1</span>
-            <h2 class="display">Coaching <em>Premium</em></h2>
-            <p>Tu veux plus qu'un programme PDF ? Avec le Coaching Premium, le Coach Kebe te suit <strong>personnellement</strong> : un plan construit pour toi, ajusté chaque semaine, et un coach qui répond à tes questions au quotidien.</p>
-            <p>C'est l'offre la plus complète de KebeLifts, pour celles et ceux qui veulent des résultats suivis de près, sans deviner quoi faire à la salle.</p>
-            <div class="premium-price">
-              <b>Places limitées</b>
-              <span>Tarif et démarrage sur demande, directement sur WhatsApp</span>
-            </div>
+            <span class="premium-badge">Coaching Premium</span>
+            <h2 class="display">Aie Kebe <em>comme coach</em></h2>
+            <p><strong>Programmes Vidéo</strong></p>
+            <p>Entraîne-toi avec un objectif. Suis ta progression. Obtiens des résultats.</p>
             <div class="premium-cta">
-              <a class="btn btn-wa" id="premiumWaBtn" href="#" target="_blank" rel="noopener">Demander le Coaching Premium sur WhatsApp</a>
-              <p class="co-note" style="text-align:left;">Vers le WhatsApp KebeLifts : +221 78 133 06 31. Dis ton niveau, ton objectif et tes disponibilités, le Coach te répond avec les détails.</p>
+              <a class="btn btn-signal btn-block" href="https://coach.everfit.io/package/AG432632" target="_blank" rel="noopener">S'abonner au Coaching Premium sur Everfit</a>
             </div>
           </div>
           <ul class="premium-feats">
-            <li>Programme 100 % personnalisé<span>Construit selon ton niveau, ton objectif, ton matériel et ton emploi du temps</span></li>
-            <li>Suivi direct sur WhatsApp<span>Contact régulier avec le Coach Kebe, pas un robot, pas un groupe géant</span></li>
-            <li>Corrections de technique en vidéo<span>Envoie tes vidéos, reçois des retours précis sur ton exécution</span></li>
-            <li>Ajustements chaque semaine<span>Charges, volume et exercices adaptés selon ta progression réelle</span></li>
-            <li>Nutrition et récupération<span>Conseils pratiques sur les protéines, le sommeil et les jours de repos</span></li>
+            <li>Programmes d'entraînement personnalisés, adaptés à tes objectifs</li>
+            <li>Démonstrations vidéo pour chaque exercice</li>
+            <li>Suivi des charges, des répétitions, des séries et de ta progression globale</li>
+            <li>Suivi de tes performances et ajustements de ton programme</li>
+            <li>Bilans toutes les deux semaines pour revoir ta progression et relever les défis</li>
+            <li>Accompagnement en continu pour rester régulier et progresser</li>
           </ul>
         </div>
       </div>
@@ -507,10 +483,10 @@
         </div>
         <div>
           <h2 class="display">Créé par le <em>Coach Kebe</em></h2>
-          <p>Kebe est un <strong>coach certifié avec 12 ans d'expérience</strong> et le visage de KebeLifts, suivi par plus de <strong>700 000 personnes</strong> sur Instagram, YouTube et TikTok.</p>
+          <p>Kebe est un <strong>coach certifié avec 12+ ans d'expérience</strong> et le visage de KebeLifts, suivi par plus de <strong>700 000 personnes</strong> sur Instagram, YouTube et TikTok.</p>
           <p>Ce sont les structures exactes derrière son entraînement : pas de séances copiées au hasard sur internet, pas de superflu. Un plan que tu peux suivre semaine après semaine, construit sur une seule règle : <strong>persévère dans l'effort</strong>.</p>
           <div class="about-stats">
-            <div><b>12</b><span>Ans d'expérience</span></div>
+            <div><b>12+</b><span>Ans d'expérience</span></div>
             <div><b>700K+</b><span>Communauté</span></div>
             <div><b>3</b><span>Plateformes</span></div>
           </div>
@@ -625,62 +601,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ================= TÉMOIGNAGES ================= -->
-    <section id="temoignages" style="border-top:1px solid var(--line);">
-      <div class="wrap">
-        <div class="testi-grid">
-          <div class="testi-intro">
-            <h2 class="display">Témoignages : <em>à toi de parler</em></h2>
-            <p>Tu as suivi un programme KebeLifts ou le Coaching Premium ? <strong>Raconte ton expérience</strong> : ton niveau de départ, ce qui a changé, ce que tu as appris.</p>
-            <p>Ton témoignage est envoyé au Coach Kebe sur WhatsApp. C'est lui qui choisit ensuite ceux qui apparaissent ici, avec ton prénom.</p>
-            <div class="testi-preview" id="testiPreview" aria-live="polite">
-              <div class="tp-label">Aperçu de ton témoignage</div>
-              <div class="testi-stars" id="tpStars">★★★★★</div>
-              <blockquote id="tpText"></blockquote>
-              <div class="tp-meta"><b id="tpName"></b> · <span id="tpProgram"></span></div>
-            </div>
-          </div>
-
-          <div class="co-card">
-            <div class="co-step-label"><b>★</b> Écris ton témoignage</div>
-            <form id="testiForm" novalidate>
-              <div class="field">
-                <label for="tName">Ton prénom ou ton nom</label>
-                <input id="tName" name="tname" type="text" autocomplete="name" placeholder="ex. Moussa" required />
-              </div>
-              <div class="field">
-                <label for="tProgram">Programme suivi</label>
-                <select id="tProgram" name="tprogram">
-                  <option value="Débutant">Débutant</option>
-                  <option value="Intermédiaire" selected>Intermédiaire</option>
-                  <option value="Avancé">Avancé</option>
-                  <option value="Coaching Premium">Coaching Premium</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="tRating">Ta note</label>
-                <select id="tRating" name="trating">
-                  <option value="5" selected>★★★★★ · 5 sur 5</option>
-                  <option value="4">★★★★☆ · 4 sur 5</option>
-                  <option value="3">★★★☆☆ · 3 sur 5</option>
-                  <option value="2">★★☆☆☆ · 2 sur 5</option>
-                  <option value="1">★☆☆☆☆ · 1 sur 5</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="tText">Ton témoignage</label>
-                <textarea id="tText" name="ttext" placeholder="Raconte ton expérience : ton niveau au départ, tes résultats, ce que le programme a changé pour toi..." required></textarea>
-              </div>
-              <p class="form-err" id="testiErr">Ajoute ton prénom et écris quelques lignes sur ton expérience pour envoyer ton témoignage.</p>
-              <button class="btn btn-wa btn-block" type="submit">Envoyer mon témoignage sur WhatsApp</button>
-              <p class="co-note">WhatsApp s'ouvre avec ton témoignage déjà écrit. Tu n'as plus qu'à appuyer sur envoyer.</p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= FAQ ================= -->
     <section class="alt">
       <div class="wrap">
@@ -706,11 +626,7 @@
           </details>
           <details>
             <summary>C'est quoi le Coaching Premium ?</summary>
-            <p>C'est le suivi personnalisé du Coach Kebe, en plus des programmes PDF : un plan construit pour toi, des ajustements chaque semaine, des corrections de technique en vidéo et un suivi direct sur WhatsApp. Les places sont limitées. Écris au +221 78 133 06 31 sur WhatsApp pour connaître le tarif et démarrer.</p>
-          </details>
-          <details>
-            <summary>Comment laisser un témoignage ?</summary>
-            <p>Va dans la section Témoignages juste au dessus, écris ton expérience avec le programme que tu as suivi, puis appuie sur le bouton WhatsApp. Ton message arrive directement chez le Coach Kebe, qui choisit les témoignages affichés sur le site.</p>
+            <p>C'est avoir Kebe comme coach, avec des programmes vidéo personnalisés adaptés à tes objectifs, des démonstrations vidéo pour chaque exercice, le suivi de tes charges, répétitions, séries et de ta progression, des ajustements de programme et des bilans toutes les deux semaines. L'abonnement se fait sur Everfit : <a href="https://coach.everfit.io/package/AG432632" target="_blank" rel="noopener" style="color:var(--signal); font-weight:700;">s'abonner au Coaching Premium</a>.</p>
           </details>
           <details>
             <summary>Je peux payer autrement ?</summary>
@@ -729,7 +645,6 @@
         <nav class="foot-links">
           <a href="#programs">Programmes</a>
           <a href="#premium">Coaching Premium</a>
-          <a href="#temoignages">Témoignages</a>
           <a href="#checkout">Commander</a>
         </nav>
       </div>
@@ -819,65 +734,6 @@
           updateWaLink();
         });
 
-        /* ---------- COACHING PREMIUM ---------- */
-        var premiumBtn = document.getElementById('premiumWaBtn');
-        var premiumLines = [
-          'Bonjour KebeLifts,',
-          '',
-          'Je suis intéressé par le Coaching Premium avec le Coach Kebe.',
-          '',
-          'Mon niveau : ',
-          'Mon objectif : ',
-          'Mes disponibilités : ',
-          '',
-          'Merci de me donner le tarif et les détails pour démarrer.'
-        ];
-        premiumBtn.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(premiumLines.join('\n'));
-
-        /* ---------- TÉMOIGNAGES ---------- */
-        var testiForm = document.getElementById('testiForm');
-        var testiErr = document.getElementById('testiErr');
-        var testiPreview = document.getElementById('testiPreview');
-
-        function starString(n) {
-          var s = '';
-          for (var i = 0; i < 5; i++) s += i < n ? '★' : '☆';
-          return s;
-        }
-
-        testiForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var tName = document.getElementById('tName').value.trim();
-          var tProgram = document.getElementById('tProgram').value;
-          var tRating = parseInt(document.getElementById('tRating').value, 10) || 5;
-          var tText = document.getElementById('tText').value.trim();
-          if (!tName || tText.length < 10) {
-            testiErr.classList.add('show');
-            return;
-          }
-          testiErr.classList.remove('show');
-
-          document.getElementById('tpStars').textContent = starString(tRating);
-          document.getElementById('tpText').textContent = '« ' + tText + ' »';
-          document.getElementById('tpName').textContent = tName;
-          document.getElementById('tpProgram').textContent = 'Programme ' + tProgram + ' · KebeLifts';
-          testiPreview.classList.add('show');
-
-          var lines = [
-            'Bonjour KebeLifts, voici mon témoignage.',
-            '',
-            'Nom : ' + tName,
-            'Programme suivi : ' + tProgram,
-            'Note : ' + starString(tRating) + ' (' + tRating + '/5)',
-            '',
-            'Mon témoignage :',
-            tText,
-            '',
-            'Vous pouvez publier ce témoignage sur le site avec mon prénom.'
-          ];
-          window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
-          testiPreview.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
       })();
     </script>
   </body>
