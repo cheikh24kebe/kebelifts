@@ -73,6 +73,8 @@
         display: inline-flex; align-items: center;
       }
       .hero-top a:hover { border-color: var(--signal); color: var(--signal); }
+      .hero-nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+      .hero-nav a.hl { border-color: var(--signal); color: var(--signal); }
       h1.hero-title {
         font-size: clamp(56px, 11.5vw, 128px);
         margin: 0 0 6px;
@@ -225,11 +227,13 @@
       .field { margin-bottom: 14px; }
       .field label { display: block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--bone-dim); margin-bottom: 7px; }
       .field label i { font-style: normal; color: var(--mute); text-transform: none; letter-spacing: 0; font-weight: 500; }
-      .field input {
+      .field input, .field textarea, .field select {
         width: 100%; background: var(--ink); border: 1px solid var(--line); border-radius: 10px;
         color: var(--bone); font: inherit; font-size: 16px; padding: 12px 14px; min-height: 48px;
       }
-      .field input:focus { outline: 2px solid var(--signal); outline-offset: 1px; border-color: var(--signal); }
+      .field textarea { min-height: 132px; resize: vertical; line-height: 1.5; }
+      .field select { cursor: pointer; }
+      .field input:focus, .field textarea:focus, .field select:focus { outline: 2px solid var(--signal); outline-offset: 1px; border-color: var(--signal); }
       .form-err { display: none; color: #ff8a70; font-size: 14px; font-weight: 600; margin: 4px 0 12px; }
       .form-err.show { display: block; }
       .summary { border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; background: var(--ink); margin-bottom: 20px; }
@@ -251,6 +255,56 @@
       .done-banner.show { display: block; }
       .done-banner b { color: var(--wa); }
 
+      /* ---------- PREMIUM COACHING ---------- */
+      .premium-card {
+        border: 1px solid var(--signal); border-radius: var(--radius); background: var(--ink-2);
+        padding: 36px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+        gap: 40px; align-items: center; position: relative; overflow: hidden;
+      }
+      .premium-card::before {
+        content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--signal);
+      }
+      .premium-badge {
+        display: inline-block; background: var(--signal); color: #171310; font-size: 11px; font-weight: 800;
+        letter-spacing: .14em; text-transform: uppercase; padding: 6px 13px; border-radius: 999px; margin-bottom: 18px;
+      }
+      .premium-card h2 { font-size: clamp(34px, 5vw, 52px); margin: 0 0 14px; }
+      .premium-card h2 em { font-style: normal; color: var(--signal); }
+      .premium-card p { color: var(--bone-dim); margin: 0 0 14px; font-size: 16.5px; }
+      .premium-card p strong { color: var(--bone); }
+      .premium-price { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+      .premium-price b { font-family: "Anton", sans-serif; font-weight: 400; font-size: 26px; color: var(--signal); text-transform: uppercase; }
+      .premium-price span { color: var(--mute); font-size: 13.5px; font-weight: 600; }
+      .premium-feats { list-style: none; margin: 0; padding: 22px; background: var(--ink); border: 1px solid var(--line); border-radius: 10px; }
+      .premium-feats li { padding: 8px 0 8px 26px; position: relative; font-size: 15.5px; color: var(--bone); border-top: 1px solid var(--line); }
+      .premium-feats li:first-child { border-top: none; padding-top: 2px; }
+      .premium-feats li:last-child { padding-bottom: 2px; }
+      .premium-feats li span { display: block; color: var(--bone-dim); font-size: 14px; margin-top: 2px; }
+      .premium-feats li::before {
+        content: ""; position: absolute; left: 2px; top: 16px; width: 10px; height: 6px;
+        border-left: 2.5px solid var(--signal); border-bottom: 2.5px solid var(--signal); transform: rotate(-45deg);
+      }
+      .premium-feats li:first-child::before { top: 10px; }
+      .premium-cta { margin-top: 22px; }
+
+      /* ---------- TÉMOIGNAGES ---------- */
+      .testi-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 22px; align-items: start; }
+      .testi-grid > * { min-width: 0; }
+      .testi-intro h2 { font-size: clamp(34px, 5vw, 50px); margin: 0 0 14px; }
+      .testi-intro h2 em { font-style: normal; color: var(--signal); }
+      .testi-intro p { color: var(--bone-dim); margin: 0 0 14px; font-size: 16.5px; }
+      .testi-intro p strong { color: var(--bone); }
+      .testi-preview {
+        display: none; margin-top: 22px; border: 1px solid var(--line); border-left: 4px solid var(--signal);
+        background: var(--ink-2); border-radius: 10px; padding: 20px 22px;
+      }
+      .testi-preview.show { display: block; }
+      .testi-preview .tp-label { font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--signal); margin-bottom: 10px; }
+      .testi-preview blockquote { margin: 0 0 12px; font-size: 17px; line-height: 1.55; color: var(--bone); }
+      .testi-preview .tp-meta { font-size: 13.5px; color: var(--mute); font-weight: 600; }
+      .testi-preview .tp-meta b { color: var(--bone-dim); }
+      .testi-stars { color: var(--signal); letter-spacing: 3px; font-size: 15px; margin-bottom: 8px; }
+
       /* ---------- FAQ ---------- */
       .faq { max-width: 780px; }
       details { border-top: 1px solid var(--line); }
@@ -268,7 +322,7 @@
       .foot { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; align-items: center; }
       .foot .wordmark { font-size: 20px; }
       .foot p { color: var(--mute); font-size: 13.5px; margin: 6px 0 0; }
-      .foot-links { display: flex; gap: 22px; }
+      .foot-links { display: flex; gap: 22px; flex-wrap: wrap; }
       .foot-links a { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; color: var(--bone-dim); padding: 8px 0; }
       .foot-links a:hover { color: var(--signal); }
 
@@ -278,6 +332,8 @@
         .band.flip .band-img { order: 0; }
         .steps { grid-template-columns: minmax(0, 1fr); }
         .checkout-grid { grid-template-columns: minmax(0, 1fr); }
+        .premium-card { grid-template-columns: minmax(0, 1fr); gap: 26px; padding: 28px 22px; }
+        .testi-grid { grid-template-columns: minmax(0, 1fr); }
         .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .stat:nth-child(3) { border-left: none; }
         .stat { border-top: 1px solid var(--line); }
@@ -297,7 +353,9 @@
       @media (max-width: 480px) {
         .wrap { padding: 0 16px; }
         h1.hero-title { font-size: clamp(46px, 15vw, 64px); }
-        .hero-top { padding-bottom: 32px; }
+        .hero-top { padding-bottom: 32px; flex-wrap: wrap; }
+        .hero-nav { justify-content: flex-start; }
+        .hero-nav a { font-size: 12px; padding: 8px 13px; }
         .hero-inner { padding-top: 44px; }
         .hero-ctas .btn { width: 100%; }
         .sec-head h2, .band h2 { font-size: clamp(30px, 9.5vw, 40px); }
@@ -317,13 +375,18 @@
       <div class="wrap hero-inner">
         <div class="hero-top">
           <div class="wordmark display">Kebe<em>Lifts</em></div>
-          <a href="#programs">Programmes</a>
+          <nav class="hero-nav">
+            <a href="#programs">Programmes</a>
+            <a class="hl" href="#premium">Coaching Premium</a>
+            <a href="#temoignages">Témoignages</a>
+          </nav>
         </div>
         <h1 class="hero-title display">Persévère<br /><span class="thin">dans l'effort.</span></h1>
         <p class="hero-sub">Des programmes d'entraînement complets créés par le Coach Kebe, <strong>12 ans</strong> d'expérience, une communauté de <strong>plus de 700 000</strong> personnes, zéro improvisation.</p>
         <p class="hero-note">Choisis ton niveau, paie une seule fois, et reçois le programme complet en PDF : chaque exercice, chaque série, en français &amp; anglais.</p>
         <div class="hero-ctas">
           <a class="btn btn-signal" href="#programs">Choisis ton niveau</a>
+          <a class="btn btn-ghost" href="#premium">Coaching Premium</a>
           <a class="btn btn-ghost" href="#how">Comment ça marche</a>
         </div>
         <div class="hero-stats">
@@ -337,7 +400,7 @@
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track" id="marqueeTrack">
-        <span>Aucun raccourci</span><span>·</span><span>La technique d'abord</span><span>·</span><span>Surcharge progressive</span><span>·</span><span>Dors 7–9 heures</span><span>·</span><span>Protéines 1,6–2,2 g/kg</span><span>·</span><span>Persévère dans l'effort</span><span>·</span>
+        <span>Aucun raccourci</span><span>·</span><span>La technique d'abord</span><span>·</span><span>Surcharge progressive</span><span>·</span><span>Dors 7–9 heures</span><span>·</span><span>Protéines 1,6–2,2 g/kg</span><span>·</span><span>Persévère dans l'effort</span><span>·</span><span>Coaching Premium</span><span>·</span>
       </div>
     </div>
 
@@ -403,6 +466,35 @@
               <button class="btn btn-outline btn-block" type="button" data-buy="Avancé">Choisir Avancé</button>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PREMIUM COACHING ================= -->
+    <section id="premium" style="padding-top:0;">
+      <div class="wrap">
+        <div class="premium-card">
+          <div>
+            <span class="premium-badge">Suivi personnalisé 1 contre 1</span>
+            <h2 class="display">Coaching <em>Premium</em></h2>
+            <p>Tu veux plus qu'un programme PDF ? Avec le Coaching Premium, le Coach Kebe te suit <strong>personnellement</strong> : un plan construit pour toi, ajusté chaque semaine, et un coach qui répond à tes questions au quotidien.</p>
+            <p>C'est l'offre la plus complète de KebeLifts, pour celles et ceux qui veulent des résultats suivis de près, sans deviner quoi faire à la salle.</p>
+            <div class="premium-price">
+              <b>Places limitées</b>
+              <span>Tarif et démarrage sur demande, directement sur WhatsApp</span>
+            </div>
+            <div class="premium-cta">
+              <a class="btn btn-wa" id="premiumWaBtn" href="#" target="_blank" rel="noopener">Demander le Coaching Premium sur WhatsApp</a>
+              <p class="co-note" style="text-align:left;">Vers le WhatsApp KebeLifts : +221 78 133 06 31. Dis ton niveau, ton objectif et tes disponibilités, le Coach te répond avec les détails.</p>
+            </div>
+          </div>
+          <ul class="premium-feats">
+            <li>Programme 100 % personnalisé<span>Construit selon ton niveau, ton objectif, ton matériel et ton emploi du temps</span></li>
+            <li>Suivi direct sur WhatsApp<span>Contact régulier avec le Coach Kebe, pas un robot, pas un groupe géant</span></li>
+            <li>Corrections de technique en vidéo<span>Envoie tes vidéos, reçois des retours précis sur ton exécution</span></li>
+            <li>Ajustements chaque semaine<span>Charges, volume et exercices adaptés selon ta progression réelle</span></li>
+            <li>Nutrition et récupération<span>Conseils pratiques sur les protéines, le sommeil et les jours de repos</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -534,6 +626,61 @@
       </div>
     </section>
 
+    <!-- ================= TÉMOIGNAGES ================= -->
+    <section id="temoignages" style="border-top:1px solid var(--line);">
+      <div class="wrap">
+        <div class="testi-grid">
+          <div class="testi-intro">
+            <h2 class="display">Témoignages : <em>à toi de parler</em></h2>
+            <p>Tu as suivi un programme KebeLifts ou le Coaching Premium ? <strong>Raconte ton expérience</strong> : ton niveau de départ, ce qui a changé, ce que tu as appris.</p>
+            <p>Ton témoignage est envoyé au Coach Kebe sur WhatsApp. C'est lui qui choisit ensuite ceux qui apparaissent ici, avec ton prénom.</p>
+            <div class="testi-preview" id="testiPreview" aria-live="polite">
+              <div class="tp-label">Aperçu de ton témoignage</div>
+              <div class="testi-stars" id="tpStars">★★★★★</div>
+              <blockquote id="tpText"></blockquote>
+              <div class="tp-meta"><b id="tpName"></b> · <span id="tpProgram"></span></div>
+            </div>
+          </div>
+
+          <div class="co-card">
+            <div class="co-step-label"><b>★</b> Écris ton témoignage</div>
+            <form id="testiForm" novalidate>
+              <div class="field">
+                <label for="tName">Ton prénom ou ton nom</label>
+                <input id="tName" name="tname" type="text" autocomplete="name" placeholder="ex. Moussa" required />
+              </div>
+              <div class="field">
+                <label for="tProgram">Programme suivi</label>
+                <select id="tProgram" name="tprogram">
+                  <option value="Débutant">Débutant</option>
+                  <option value="Intermédiaire" selected>Intermédiaire</option>
+                  <option value="Avancé">Avancé</option>
+                  <option value="Coaching Premium">Coaching Premium</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="tRating">Ta note</label>
+                <select id="tRating" name="trating">
+                  <option value="5" selected>★★★★★ · 5 sur 5</option>
+                  <option value="4">★★★★☆ · 4 sur 5</option>
+                  <option value="3">★★★☆☆ · 3 sur 5</option>
+                  <option value="2">★★☆☆☆ · 2 sur 5</option>
+                  <option value="1">★☆☆☆☆ · 1 sur 5</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="tText">Ton témoignage</label>
+                <textarea id="tText" name="ttext" placeholder="Raconte ton expérience : ton niveau au départ, tes résultats, ce que le programme a changé pour toi..." required></textarea>
+              </div>
+              <p class="form-err" id="testiErr">Ajoute ton prénom et écris quelques lignes sur ton expérience pour envoyer ton témoignage.</p>
+              <button class="btn btn-wa btn-block" type="submit">Envoyer mon témoignage sur WhatsApp</button>
+              <p class="co-note">WhatsApp s'ouvre avec ton témoignage déjà écrit. Tu n'as plus qu'à appuyer sur envoyer.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= FAQ ================= -->
     <section class="alt">
       <div class="wrap">
@@ -558,6 +705,14 @@
             <p>Non. 10 000 FCFA est un paiement unique par programme, et le PDF t'appartient pour toujours. Si tu veux un autre niveau plus tard, c'est le même prix.</p>
           </details>
           <details>
+            <summary>C'est quoi le Coaching Premium ?</summary>
+            <p>C'est le suivi personnalisé du Coach Kebe, en plus des programmes PDF : un plan construit pour toi, des ajustements chaque semaine, des corrections de technique en vidéo et un suivi direct sur WhatsApp. Les places sont limitées. Écris au +221 78 133 06 31 sur WhatsApp pour connaître le tarif et démarrer.</p>
+          </details>
+          <details>
+            <summary>Comment laisser un témoignage ?</summary>
+            <p>Va dans la section Témoignages juste au dessus, écris ton expérience avec le programme que tu as suivi, puis appuie sur le bouton WhatsApp. Ton message arrive directement chez le Coach Kebe, qui choisit les témoignages affichés sur le site.</p>
+          </details>
+          <details>
             <summary>Je peux payer autrement ?</summary>
             <p>Wave est le moyen de paiement pour le moment. C'est l'option la plus rapide au Sénégal et en Afrique de l'Ouest. Paie le montant exact de 10 000 FCFA pour que ta preuve corresponde à ton programme.</p>
           </details>
@@ -573,7 +728,8 @@
         </div>
         <nav class="foot-links">
           <a href="#programs">Programmes</a>
-          <a href="#how">Comment ça marche</a>
+          <a href="#premium">Coaching Premium</a>
+          <a href="#temoignages">Témoignages</a>
           <a href="#checkout">Commander</a>
         </nav>
       </div>
@@ -661,6 +817,66 @@
           waBtn.setAttribute('aria-disabled', 'false');
           doneBanner.classList.add('show');
           updateWaLink();
+        });
+
+        /* ---------- COACHING PREMIUM ---------- */
+        var premiumBtn = document.getElementById('premiumWaBtn');
+        var premiumLines = [
+          'Bonjour KebeLifts,',
+          '',
+          'Je suis intéressé par le Coaching Premium avec le Coach Kebe.',
+          '',
+          'Mon niveau : ',
+          'Mon objectif : ',
+          'Mes disponibilités : ',
+          '',
+          'Merci de me donner le tarif et les détails pour démarrer.'
+        ];
+        premiumBtn.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(premiumLines.join('\n'));
+
+        /* ---------- TÉMOIGNAGES ---------- */
+        var testiForm = document.getElementById('testiForm');
+        var testiErr = document.getElementById('testiErr');
+        var testiPreview = document.getElementById('testiPreview');
+
+        function starString(n) {
+          var s = '';
+          for (var i = 0; i < 5; i++) s += i < n ? '★' : '☆';
+          return s;
+        }
+
+        testiForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var tName = document.getElementById('tName').value.trim();
+          var tProgram = document.getElementById('tProgram').value;
+          var tRating = parseInt(document.getElementById('tRating').value, 10) || 5;
+          var tText = document.getElementById('tText').value.trim();
+          if (!tName || tText.length < 10) {
+            testiErr.classList.add('show');
+            return;
+          }
+          testiErr.classList.remove('show');
+
+          document.getElementById('tpStars').textContent = starString(tRating);
+          document.getElementById('tpText').textContent = '« ' + tText + ' »';
+          document.getElementById('tpName').textContent = tName;
+          document.getElementById('tpProgram').textContent = 'Programme ' + tProgram + ' · KebeLifts';
+          testiPreview.classList.add('show');
+
+          var lines = [
+            'Bonjour KebeLifts, voici mon témoignage.',
+            '',
+            'Nom : ' + tName,
+            'Programme suivi : ' + tProgram,
+            'Note : ' + starString(tRating) + ' (' + tRating + '/5)',
+            '',
+            'Mon témoignage :',
+            tText,
+            '',
+            'Vous pouvez publier ce témoignage sur le site avec mon prénom.'
+          ];
+          window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+          testiPreview.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
       })();
     </script>
